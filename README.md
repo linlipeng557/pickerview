@@ -7,6 +7,9 @@
 
 
 dependencies {
-        implementation 'com.github.linlipeng557:pickerview:0.0.1'
+        implementation 'com.github.linlipeng557:pickerview:0.0.3'
 }
+
+
+现在只有一个时间选择器，其他功能后续加。
 </code></pre>
