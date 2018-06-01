@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/cancel_Tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:paddingBottom="10dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="10dp"
+            android:text="取消"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/title_Tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/cancel_Tv"
+            android:layout_alignTop="@+id/cancel_Tv"
+            android:layout_toLeftOf="@+id/submit_Tv"
+            android:layout_toRightOf="@+id/cancel_Tv"
+            android:gravity="center"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/submit_Tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:paddingBottom="10dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="10dp"
+            android:text="确定"
+            android:textSize="14sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:orientation="horizontal">
+
+        <com.lp.pickerview.widget.WheelView
+            android:id="@+id/wv1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.5"
+            app:outTextSize="14sp"
+            app:text="年"
+            app:textSize="16sp" />
+
+        <com.lp.pickerview.widget.WheelView
+            android:id="@+id/wv2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:outTextSize="14sp"
+            app:text="月"
+            app:textSize="16sp" />
+
+        <com.lp.pickerview.widget.WheelView
+            android:id="@+id/wv3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:outTextSize="14sp"
+            app:text="日"
+            app:textSize="16sp" />
+
+        <com.lp.pickerview.widget.WheelView
+            android:id="@+id/wv4"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:outTextSize="14sp"
+            app:text="时"
+            app:textSize="16sp" />
+
+        <com.lp.pickerview.widget.WheelView
+            android:id="@+id/wv5"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:outTextSize="14sp"
+            app:text="分"
+            app:textSize="16sp" />
+
+    </LinearLayout>
+
+</LinearLayout>
