@@ -32,7 +32,7 @@ build
 *~
 *.swp
 /.idea/
-/allprojects - -repositories - -... -maven - url -https/
+/yyy/
 app/libs/
 pickerview/libs/
 pickerview/src/main/res/drawable/
