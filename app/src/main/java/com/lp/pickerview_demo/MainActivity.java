@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (datePickerView == null) {
-                    datePickerView = new DatePickerView.Builder(MainActivity.this).setType(DatePickerView.Type.YMD).show();
+                    datePickerView = new DatePickerView.Builder(MainActivity.this).setType(DatePickerView.Type.YMDHM).show();
                     datePickerView.setOnSelectedDateTimeListener(new DatePickerView.OnSelectedDateTimeListener() {
                         @Override
                         public void onSelectedDateTime(int y, int m, int d, int h, int min) {

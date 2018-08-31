@@ -122,7 +122,7 @@ public class DatePickerView extends AbsBottomDialog implements View.OnClickListe
         if (types[1])
             wv2.setList(getNumber02(1, 12));
         if (types[3])
-            wv4.setList(getNumber02(0, 23));
+            wv4.setList(getNumber02(0, 24));
         if (types[4])
             wv5.setList(getNumber02(0, 60));
 
@@ -201,6 +201,7 @@ public class DatePickerView extends AbsBottomDialog implements View.OnClickListe
         DParams dParams;
         Context context;
         DatePickerView datePickerView;
+        OnSelectedDateTimeListener onSelectedDateTimeListener;
 
         public Builder(Context context) {
             dParams = new DParams();
@@ -222,6 +223,11 @@ public class DatePickerView extends AbsBottomDialog implements View.OnClickListe
             return this;
         }
 
+
+        public Builder setOnSelectedDateTimeListener(OnSelectedDateTimeListener onSelectedDateTimeListener) {
+            this.onSelectedDateTimeListener = onSelectedDateTimeListener;
+            return this;
+        }
         public Builder setDateTime(Integer y, Integer m, Integer d, Integer h, Integer min) {
             if (y != null && y != 0)
                 dParams.year = y;
@@ -239,6 +245,7 @@ public class DatePickerView extends AbsBottomDialog implements View.OnClickListe
         private void create() {
             datePickerView = new DatePickerView(context);
             datePickerView.setdParams(dParams.init());
+            datePickerView.setOnSelectedDateTimeListener(onSelectedDateTimeListener);
         }
 
         public DatePickerView show() {
@@ -281,7 +288,7 @@ public class DatePickerView extends AbsBottomDialog implements View.OnClickListe
                 day = cal.get(Calendar.DATE);
             }
             if (hour == null) {
-                hour = cal.get(Calendar.HOUR);
+                hour = cal.get(Calendar.HOUR_OF_DAY);
             }
             if (min == null) {
                 min = cal.get(Calendar.MINUTE);
@@ -309,6 +316,7 @@ public class DatePickerView extends AbsBottomDialog implements View.OnClickListe
             booleans[0] = b0;
             booleans[1] = b1;
             booleans[2] = b2;
+            booleans[3] = b3;
             booleans[4] = b4;
         }
     }
