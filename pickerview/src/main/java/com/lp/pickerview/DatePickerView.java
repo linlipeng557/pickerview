@@ -153,7 +153,6 @@ public class DatePickerView extends AbsBottomDialog implements View.OnClickListe
     WheelView.OnSelectPickerListener onSelectPickerListener = new WheelView.OnSelectPickerListener() {
         @Override
         public void onSelect(View view, int poistion, Object o) {
-            Log.d("SDFSDFSDF","onSelect");
             wv3.setList(getNumber02(1, getDays()));
         }
     };
@@ -161,7 +160,6 @@ public class DatePickerView extends AbsBottomDialog implements View.OnClickListe
     private int getDays() {
         int year = wv1.getCurrentPosition() + 1999;
         int m = wv2.getCurrentPosition() + 1;
-        Log.d("SDFSDFSDF", "year:"+year+"m:"+m);
         if (m == 2) {
             if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
                 return 29;
