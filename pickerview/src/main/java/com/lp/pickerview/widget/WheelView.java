@@ -391,7 +391,6 @@ public class WheelView extends View {
      * @param position
      */
     private void setSelectedPosition(int position) {
-        Log.d(TAG,"position ->" + position + "   tmpSelectedPosition:"+tmpSelectedPosition);
         if (tmpSelectedPosition != position) {
             this.selectedPosition = position;
             this.tmpSelectedPosition = selectedPosition;
