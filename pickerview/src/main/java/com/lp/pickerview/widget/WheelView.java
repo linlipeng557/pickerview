@@ -25,9 +25,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WheelView extends View {
+    static  final String TAG = "WheelView_";
     private float textSize = sp2px(getContext(), 15);//字体大小
     private float outTextSize = sp2px(getContext(), 13);//出界的文字大小度标准，即出界的字体必须必中间字体小
-    private float textPadding = sp2px(getContext(), 3);//字体距离
+    private float textPadding_tb = sp2px(getContext(), 3);//字体距离
+    private float textPadding_lr = sp2px(getContext(), 3);//字体距离
     private float itemHeight = 0;//条目高
     private float itemHeightHalf = 0;//条目高的一般
     private float middleTopY = 0;//中间两线的上面那部分
@@ -89,7 +91,8 @@ public class WheelView extends View {
             mTextColor = ta.getColor(R.styleable.WheelView_textColor, mTextColor);
             outTextColor = ta.getColor(R.styleable.WheelView_outTextColor, outTextColor);
             textSize = ta.getDimensionPixelSize(R.styleable.WheelView_textSize, (int) textSize);
-            textPadding = ta.getDimensionPixelSize(R.styleable.WheelView_textPadding, (int) textPadding);
+            textPadding_tb = ta.getDimensionPixelSize(R.styleable.WheelView_textPadding_tb, (int) textPadding_tb);
+            textPadding_lr = ta.getDimensionPixelSize(R.styleable.WheelView_textPadding_lr, (int) textPadding_lr);
             offset = ta.getInteger(R.styleable.WheelView_offset, offset);
             text = ta.getString(R.styleable.WheelView_text);
             lineWidth = ta.getDimensionPixelSize(R.styleable.WheelView_lineWidth, (int) lineWidth);
@@ -226,7 +229,7 @@ public class WheelView extends View {
             if (middlebaseLine.isNaN()) {
                 middlebaseLine = getBaseline(centerTextPaint);
             }
-            canvas.drawText(text, measuredWidth - measureTextWidth(text, centerTextPaint) - textPadding * 2,
+            canvas.drawText(text, measuredWidth - measureTextWidth(text, centerTextPaint) - textPadding_lr * 2,
                     getScrollY() + measuredHeight / 2 + middlebaseLine, centerTextPaint);
         }
         //画线
@@ -244,7 +247,7 @@ public class WheelView extends View {
      * 测量高度（item高度，view高度）
      */
     private void measureHeight() {
-        itemHeight = getFontHeight(textSize) + textPadding * 2;
+        itemHeight = getFontHeight(textSize) + textPadding_tb * 2;
         itemHeightHalf = itemHeight / 2;
         measuredHeight = (int) (itemHeight * (offset * 2 + 1));
         middleTopY = itemHeight * offset;
@@ -388,6 +391,7 @@ public class WheelView extends View {
      * @param position
      */
     private void setSelectedPosition(int position) {
+        Log.d(TAG,"position ->" + position + "   tmpSelectedPosition:"+tmpSelectedPosition);
         if (tmpSelectedPosition != position) {
             this.selectedPosition = position;
             this.tmpSelectedPosition = selectedPosition;
@@ -417,6 +421,8 @@ public class WheelView extends View {
         int endY = (int) (index * itemHeight);
         int dy = endY - y;
         smoothScroll(y, endY, Math.abs(dy * 6));
+
+        Log.d(TAG,"correctionScrollY ->" + index);
         setSelectedPosition(index);
     }
 

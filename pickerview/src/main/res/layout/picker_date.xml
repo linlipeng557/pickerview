@@ -15,10 +15,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:paddingBottom="10dp"
+            android:paddingBottom="5dp"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
-            android:paddingTop="10dp"
+            android:paddingTop="5dp"
             android:text="取消"
             android:textSize="14sp" />
 
@@ -38,10 +38,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:paddingBottom="10dp"
+            android:paddingBottom="5dp"
             android:paddingLeft="16dp"
             android:paddingRight="16dp"
-            android:paddingTop="10dp"
+            android:paddingTop="5dp"
             android:text="确定"
             android:textSize="14sp" />
     </RelativeLayout>
@@ -58,6 +58,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1.5"
             app:outTextSize="14sp"
+            app:textPadding_lr="5dp"
+            app:textPadding_tb="10dp"
             app:text="年"
             app:textSize="16sp" />
 
@@ -65,14 +67,18 @@
             android:id="@+id/wv2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            app:textPadding_tb="10dp"
             android:layout_weight="1"
             app:outTextSize="14sp"
             app:text="月"
+            app:textPadding_lr="5dp"
             app:textSize="16sp" />
 
         <com.lp.pickerview.widget.WheelView
             android:id="@+id/wv3"
+            app:textPadding_tb="10dp"
             android:layout_width="0dp"
+            app:textPadding_lr="5dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:outTextSize="14sp"
@@ -85,6 +91,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             app:outTextSize="14sp"
+            app:textPadding_tb="10dp"
+            app:textPadding_lr="5dp"
             app:text="时"
             app:textSize="16sp" />
 
@@ -93,6 +101,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            app:textPadding_lr="5dp"
+            app:textPadding_tb="10dp"
             app:outTextSize="14sp"
             app:text="分"
             app:textSize="16sp" />
