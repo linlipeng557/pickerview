@@ -422,8 +422,6 @@ public class WheelView extends View {
         int endY = (int) (index * itemHeight);
         int dy = endY - y;
         smoothScroll(y, endY, Math.abs(dy * 6));
-
-        Log.d(TAG, "correctionScrollY ->" + index);
         setSelectedPosition(index);
     }
 
