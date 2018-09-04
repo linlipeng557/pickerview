@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WheelView extends View {
-    static  final String TAG = "WheelView_";
+    static final String TAG = "WheelView_";
     private float textSize = sp2px(getContext(), 15);//字体大小
     private float outTextSize = sp2px(getContext(), 13);//出界的文字大小度标准，即出界的字体必须必中间字体小
     private float textPadding_tb = sp2px(getContext(), 3);//字体距离
@@ -155,17 +155,19 @@ public class WheelView extends View {
         }
         this.list.clear();
         this.list.addAll(list);
-        tmpSelectedPosition = -1;
-        selectedPosition = 0;
         calculateTextBaseLine();//计算字体的基线
         if (setDataWillScrollYTo0) {
+            tmpSelectedPosition = -1;
+            selectedPosition = 0;
             scrollTo(0, 0);
         } else {
-            if (getScrollY() > scrollHeight)
+            if (getScrollY() > scrollHeight) {
+                selectedPosition = (int) (scrollHeight / itemHeight);
                 scrollTo(0, (int) scrollHeight);
+            }
         }
         invalidate();
-        setSelectedPosition(0);
+        setSelectedPosition(selectedPosition);
     }
 
 
@@ -421,7 +423,7 @@ public class WheelView extends View {
         int dy = endY - y;
         smoothScroll(y, endY, Math.abs(dy * 6));
 
-        Log.d(TAG,"correctionScrollY ->" + index);
+        Log.d(TAG, "correctionScrollY ->" + index);
         setSelectedPosition(index);
     }
 
