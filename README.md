@@ -7,7 +7,7 @@
 
 
 dependencies {
-        implementation 'com.github.linlipeng557:pickerview:0.0.6'
+        implementation 'com.github.linlipeng557:pickerview:0.0.7'
 }
 
 
