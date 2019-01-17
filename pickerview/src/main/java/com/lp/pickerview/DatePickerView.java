@@ -299,6 +299,8 @@ public class DatePickerView extends AbsBottomDialog implements View.OnClickListe
 
     public enum Type {
         YMDHM(true, true, true, true, true),
+        Y(true, false, false, false, false),
+        M(false, true, false, false, false),
         MD(false, true, true, false, false),
         YMD(true, true, true, false, false),
         HM(false, false, false, true, true),
